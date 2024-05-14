@@ -1,0 +1,11 @@
+put
+the
+objects
+you
+want
+to
+label
+here
+one
+per
+line
