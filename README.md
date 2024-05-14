@@ -6,7 +6,7 @@ Make sure to donwload a SAM model weights (from the GitHub repo) and specify it 
 
 This tool only produces bounding boxes and not masks, but SAM actually extracts masks from the items, so it would be really easy to extract and save them. I will update this feature if I need it in the future or if you ask for it. You can also visualize produced labels using the provided labels visualizer, to ensure everything is fine.
 
-The tool also comes with an image mirrorer to be executed AFTER the labelling, for data augmentation. It also mirrors also the corresponding labels. The usage is really intuitive and the prerequisites are the same of the main tool.
+The tool also comes with an image mirrorer to be executed AFTER the labelling, for data augmentation. It also mirrors the corresponding labels. The usage is really intuitive and the prerequisites are the same of the main tool.
 
 Once you have labelled and eventually mirrored the data, you can run the train-validation splitter. It works on the same folders you created for the images and labels, just specify them in the program prompt. You can set the validation size in % and the random seed.
 
