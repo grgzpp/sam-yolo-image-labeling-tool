@@ -1,19 +1,23 @@
 # SAM-YOLO Image Labeling Tool
 
-This Python tool provides an easy way to label objects in images with bounding boxes for YOLO training. It allows you to load images from a directory, draw bounding boxes around objects of interest, assign labels, and save the labels in YOLO format. It is powered by the amazing Segment Anything Model (SAM), by Meta AI. Follow the instructions on their [GitHub repo](https://github.com/facebookresearch/segment-anything) for the installation. It allows to get precise bounding boxes around objects without much effort in drawing them, as this model segments the most likely element inside the drawn bounding box.
+<p align="center">
+  <img src="./videos/sam_yolo_image_labeling_tool.gif" alt="animated" />
+</p>
 
-Make sure to donwload a SAM model weights (from the GitHub repo) and specify it in *MODEL_TYPE* parameter. Also make sure to specify the right path to where you savde the weights file *CHECHPOINT_PATH*. The labeling tool has been tested with ViT-L SAM model (large model) and works really weel. It is a little bit slow, depending on the hardware, but the SAM model is really heavy, completely understandable for what it can do.
+This Python tool provides an easy way to label objects in images with bounding boxes for YOLO training. It allows to load images from a directory, draw bounding boxes around objects of interest, assign labels, and save the labels in YOLO format. It is powered by the amazing Segment Anything Model (SAM), by Meta AI. Follow the instructions on their [GitHub repo](https://github.com/facebookresearch/segment-anything) for the installation. It allows to get precise bounding boxes around objects without much effort in drawing them, as this model segments the most likely element inside the drawn bounding box.
+
+Make sure to donwload a SAM model weights (from the GitHub repo) and specify it in *MODEL_TYPE* parameter. Also make sure to specify the right path to where you savde the weights file *CHECHPOINT_PATH*. The labeling tool has been tested with ViT-L SAM model (large model) and works really well. It is a little bit slow, depending on the hardware, but the SAM model is really heavy, completely understandable for what it can do.
 
 This tool only produces bounding boxes and not masks, but SAM actually extracts masks from the items, so it would be really easy to extract and save them. I will update this feature if I need it in the future or if you ask for it. You can also visualize produced labels using the provided labels visualizer, to ensure everything is fine.
 
-The tool also comes with an image mirrorer to be executed AFTER the labelling, for data augmentation. It also mirrors the corresponding labels. The usage is really intuitive and the prerequisites are the same of the main tool.
+The tool also comes with an image mirrorer to be executed AFTER the labeling, for data augmentation. It also mirrors the corresponding labels. The usage is really intuitive and the prerequisites are the same of the main tool.
 
 Once you have labelled and eventually mirrored the data, you can run the train-validation splitter. It works on the same folders you created for the images and labels, just specify them in the program prompt. You can set the validation size in % and the random seed.
 
 ## Prerequisites
 
 - Python 3.x
-- PyTorch (CUDA installation is highly recommended, follow the steps on PyTorch [documentation](https://pytorch.org/))
+- PyTorch (CUDA installation is highly recommended, follow the steps on [PyTorch documentation](https://pytorch.org/))
 - Segment Anything Model (SAM)
 - OpenCV
 - Matplotlib
@@ -51,4 +55,4 @@ pip install -r requirements.txt
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
