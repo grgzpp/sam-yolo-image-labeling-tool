@@ -41,6 +41,7 @@ def main():
     except:
         raise Exception("File labels.txt missing in the parent directory of input directory")
         
+    np.random.seed(42)
     label_colors = [np.random.random(3) for _ in range(len(defined_labels))]
     handles = [mlines.Line2D([], [], color=label_colors[i], label=defined_labels[i]) for i in range(len(defined_labels))]
 
